@@ -12,11 +12,9 @@ with open(args.filename, 'r') as f:
 	ips = [line.strip() for line in f]
 
 
-#print ips
 awsInfo = {}
 for ip in ips:
 	try:
-#		print ip
 		hostinfo = api.host(ip)
 		awsInfo[ip] = hostinfo
 	except shodan.APIError, e:

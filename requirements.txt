@@ -1,1 +1,2 @@
+python-dotenv==0.17.0
 shodan==1.7.5

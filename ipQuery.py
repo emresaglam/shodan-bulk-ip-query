@@ -14,7 +14,7 @@ api = shodan.Shodan(SHODAN_API_KEY)
 
 parser = argparse.ArgumentParser(description='Get a list of IPs and return shodan info.')
 parser.add_argument('--filename', '-f', default='iplist.txt')
-parser.add_argument('--delay', '-d', default=0)
+parser.add_argument('--delay', '-d', default=0, type=int)
 parser.add_argument('--verbose', '-v', default=True)
 argsc = parser.parse_args()
 

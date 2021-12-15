@@ -2,6 +2,7 @@ import json
 import shodan
 import argparse
 from dotenv import load_dotenv
+import time
 import os
 
 load_dotenv()
@@ -21,6 +22,7 @@ for ip in ips:
     try:
         hostinfo = api.host(ip)
         ipInfo[ip] = hostinfo
+        time.sleep(1)
     except shodan.APIError as e:
         ipInfo[ip] = '{}'.format(e)
 

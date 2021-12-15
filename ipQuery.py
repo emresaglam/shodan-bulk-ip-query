@@ -3,7 +3,9 @@ import shodan
 import argparse
 from dotenv import load_dotenv
 import time
+import rich
 import os
+from rich import print
 
 load_dotenv()
 

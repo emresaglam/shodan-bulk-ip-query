@@ -16,6 +16,8 @@ parser = argparse.ArgumentParser(description='Get a list of IPs and return shoda
 parser.add_argument('--filename', '-f', default='iplist.txt')
 parser.add_argument('--delay', '-d', default=0, type=int)
 parser.add_argument('--verbose', '-v', default=True)
+parser.add_argument('--output', '-o', default=None)
+
 argsc = parser.parse_args()
 
 with open(argsc.filename, 'r') as f:
@@ -33,5 +35,10 @@ for ip in ips:
         if argsc.verbose:
             print(f'[ERROR] - fetching host {ip}', e)
         ipInfo[ip] = '{}'.format(e)
-
+# default=f'shodan_results_{int(time.time())}.json'
 print(json.dumps(ipInfo))
+if argsc.output != None:
+    ofname = argsc.output
+    with open(ofname, 'w') as of:
+        of.write(json.dumps(ipInfo))
+    print(f'[INFO] output written to {ofname}')

@@ -9,7 +9,7 @@ This tool gets a list of IPs in a file (one IP per line) and queries shodan.io. 
 # Usage
 `# python ipQuery.py` will take as default filename: `iplist.txt` as filename to read the IPs from. You can always use `-f` or `--filename` as an argument to provide your filename. 
 
-`# python ipQuery.py -f myawesomepath/myawesomefilename.foo`
+`# SHODAN_API_KEY=XXXXXXX python ipQuery.py -f myawesomepath/myawesomefilename.foo -d 1`
 
 
 # TODO

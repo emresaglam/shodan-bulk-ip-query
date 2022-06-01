@@ -28,9 +28,9 @@ for ip in ips:
     if argsc.verbose:
         print(f'[INFO] - fetching host {ip}') 
     try:
+        time.sleep(argsc.delay)
         hostinfo = api.host(ip)
         ipInfo[ip] = hostinfo
-        time.sleep(argsc.delay)
     except shodan.APIError as e:
         if argsc.verbose:
             print(f'[ERROR] - fetching host {ip}', e)
